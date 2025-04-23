@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 
 # Load and prepare training data
-df = pd.read_csv(r"Assignement-data-analyst/healthcare_dataset.csv")
+df = pd.read_csv(r"healthcare_dataset.csv")
 
 # Train simple rule-based model
 risk_model = df.groupby(['Gender', 'Blood Group Type'])['Medical Condition'] \
@@ -47,10 +47,10 @@ if submit:
     }
 
     try:
-        history_df = pd.read_csv(r"Assignement-data-analyst\user_inputs.csv")
+        history_df = pd.read_csv(r"user_inputs.csv")
         history_df = pd.concat([history_df, pd.DataFrame([new_entry])], ignore_index=True)
     except FileNotFoundError:
         history_df = pd.DataFrame([new_entry])
 
-    history_df.to_csv(r"Assignement-data-analyst\user_inputs.csv", index=False)
+    history_df.to_csv(r"user_inputs.csv", index=False)
     st.info("Your data has been saved securely.")
