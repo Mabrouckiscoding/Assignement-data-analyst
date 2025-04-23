@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-file_path = r"Assignement-data-analyst/healthcare_dataset.csv"
+file_path = r"healthcare_dataset.csv"
 df = pd.read_csv(file_path)
 
 # Group data by Blood Group, Gender, and Medical Condition and count occurrences
